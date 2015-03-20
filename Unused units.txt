@@ -1,0 +1,23 @@
+		<div id="GREN" class="section"style="display:none;" >
+			<h1>Grenadier</h1>
+			<Img src="Bot Factory face.png" alt="Bot Factory" style="width:250px;height:106px;">
+			<p>These boys will be flinging shells in no time! but hitting stuff is another matter altogether.</p>
+			<p>Fights enemy buildings.</p>
+			<h2>Grenadiers: <span id="bGrenadiers">0</span></h2>
+		</div>
+	
+		<div id="BOOM" class="section" style="display:none;">
+			<h1>Boom</h1>
+			<Img src="Bot Factory face.png" alt="Bot Factory" style="width:250px;height:106px;">
+			<p>These little guys just love to hug people, with their little loving spider hands, and explosive abdomen.</p>
+			<p>Fights enemy units.</p>
+			<h2>Booms: <span id="bBooms">0</span></h2>
+		</div>
+	
+		<div id="COMFAB" class="section" style="display:none;">
+			<h1>Combat Fabbers</h1>
+			<Img src="Bot Factory face.png" alt="Bot Factory" style="width:250px;height:106px;">
+			<p>Like fabbers, but for combat! Get it?....don't blame me, I didn't name it!</p>
+			<p>Heals stuff for you?</p>
+			<h2>Combat Fabbers: <span id="bCombatFabbers">0</span></h2>
+		</div>

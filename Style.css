@@ -1,0 +1,90 @@
+#header {
+    text-align:center;
+    padding:5px;
+	position:fixed;
+	width:20%;
+	top:0;
+	right:0;
+}
+#header:hover{opacity:0.3;}
+#title {
+	text-align:center;
+	background-color:white;
+	color:black;
+}
+.titles {
+	background-color:orange;
+	color:white;
+	width:15%;
+	padding:5px;
+	text-align:center;
+}
+#resource {
+	background-color:orange;
+	color:white;
+}
+.row{
+	overflow:hidden;
+}
+.section {
+    width:250px;
+    float:left;
+	border:5px solid Orange;
+	border-radius: 25px;
+	margin: 2px;
+	padding: 5px;
+}
+
+.section:before,
+.section:after {
+    content: '';
+    display: table;
+}
+
+.section:after {
+    clear: both;
+}
+
+.sectionB {
+    width:250px;
+    float:left;
+	border:5px solid Red;
+	border-radius: 25px;
+	margin: 2px;
+	padding: 5px;
+}
+
+.sectionB:before,
+.sectionB:after {
+    content: '';
+    display: table;
+}
+
+.sectionB:after {
+    clear: both;
+}
+
+.sectionP {
+    width:250px;
+    float:left;
+	border:5px solid Brown;
+	border-radius: 25px;
+	margin: 2px;
+	padding: 5px;
+}
+
+.sectionP:before,
+.sectionP:after {
+    content: '';
+    display: table;
+}
+
+.sectionP:after {
+    clear: both;
+}
+
+.Button {
+	padding:15px;
+	font-size: 150%;
+	width:250px;
+}

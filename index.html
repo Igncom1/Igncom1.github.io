@@ -1,7 +1,442 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<link rel="stylesheet" href="Style.css">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+	
+
+	<div id="header">
+		<div id="title">
+			<h1>Planetary Clicker</h1>
+		</div>
+		<div id="resource">
+			<h1>Metal Mass: <span id="metal">0</span></h1>
+			<h1>Energy: <span id="energy">0</span></h1>
+		</div>
+	</div>
+	<div id="Units" class="row">
+		<div class="titles"><h2>Units</h2></div>
+		<div id="ACU" class="section">
+			<h1>Armored Command Unit</h1>
+			<Img src="Gamma Sync Commander.png" alt="ACU" style="">
+			<p>The ACU is the head of your army, unless you have 40, then you are a hydra....hail hydra!</p>
+			<p>Reclaims 1 metal or 20 energy per click.</p>
+			<h2>ACU's: <span id="acus">0</span></h2>
+			<input class="Button" type="button" value="Reclaim Metal" onclick="reclaimM()"><br />
+			<input class="Button" type="button" value="Reclaim Energy" onclick="reclaimE()">
+		</div>
+	
+		<div id="BFAB" class="section" style="display:none;">
+			<h1>Bot Fabber</h1>
+			<Img src="Bot Fabber face.png" alt="Bot Factory" style="">
+			<p>Bot fabbers are like people, but expendable......ok, MORE expendable.</p>
+			<p>Builds stuff for you.</p>
+			<h2>Bot Fabbers: <span id="bFabbers">0</span></h2>
+		</div>
+	
+		<div id="DOX" class="section" style="display:none;">
+			<h1>Dox</h1>
+			<Img src="Dox face.png" alt="Bot Factory">
+			<p>Your basic combat units, utterly worthless, but cheap, and can swim....for whatever reason.</p>
+			<p>Fights enemy units.</p>
+			<h2>Dox: <span id="bDoxs">0</span></h2>
+		</div>
+	</div>
+	
+	<div id="Buildings" class="row">
+		<div class="titles"><h2>Buildings</h2></div>
+		<div id="MEX" class="section" style="display:none;">
+			<h1>Metal Extractor</h1>
+			<Img src="MEX face.png" alt="Metal Extractor" style="">
+			<p>The Metal Extractor generates 1 metal per second, saving you from a life of reclamation.</p>
+			<p>Mines 1 metal per second.</p>
+			<h2>Metal Extractors <span id="mmines">0</span> out of <span id="mminespots">0</span> mine spots</h2>
+			<h2>Metal Extractor cost: <span id="mminecost">0</span></h2>
+			<input class="Button" type="button" value="Build Metal Extractor" onclick="buildMEX()">
+		</div>
+	
+		<div id="PP" class="section" style="display:none;">
+			<h1>Power Plant</h1>
+			<Img src="Power Plant face.png" alt="Power Plant" style="">
+			<p>By stuffing all kinds of things into this building, it generates power.... somehow anyway.</p>
+			<p>Generates 20 power per second.</p>
+			<h2>PowerPlants: <span id="pplants">0</span></h2>
+			<h2>PowerPlant Cost: <span id="pplantcost">0</span></h2>
+			<input class="Button" type="button" value="Build Power Plant" onclick="buildPP()">
+		</div>
+	
+		<div id="RADAR" class="section" style="display:none;">
+			<h1>Radar</h1>
+			<Img src="Radar face.png" alt="Radar" style="">
+			<p>The classic world war 2 device for dodging incoming Deutsch Wurst!</p>
+			<p>Used to survey planets and other locations</p>
+			<h2>Radars: <span id="radars">0</span></h2>
+			<h2>Radar Cost: <span id="radarMcost">0</span> and  <span id="radarEcost">0</span></h2>
+			<input class="Button" type="button" value="Build Radar" onclick="buildRadar()">
+		</div>
+	
+		<div id="BOTF" class="section" style="display:none;">
+			<h1>Bot Factory</h1>
+			<Img src="Bot Factory face.png" alt="Bot Factory" style="width:250px;height:106px;">
+			<p>Builds robots of many types, like cannon fodder bot, or...other fodder bot....oh...it's the starting factory.</p>
+			<p>Builds Bot Fabbers, Dox, Grenadiers, Booms and Combat Fabbers.</p>
+			<h2>Bot Factory: <span id="bFactorys">0</span></h2>
+			<h2>Bot Factory Cost: <span id="bFactorycost">0</span></h2>
+			<input class="Button" type="button" value="Build Bot Factory" onclick="buildbFactory(1)"><br />
+			<h2><input type="radio" name="bbuild" id="bFabber" onclick="checkBradio('bFabber')">Bot Fabber</h2><br />
+			<h2><input type="radio" name="bbuild" id="bDox" onclick="checkBradio('bDox')">Dox</h2><br />
+		</div>
+	
+	</div>
+	
+	<div id="Upgrades" class="row">
+		<div class="titles"><h2>Upgrades</h2></div>
+		<div id="RECOVERY" class="section" style="display:none;"> 
+			<h1>ACU Recovery</h1>
+			<Img src="Gamma Sync Commander.png" alt="ACU">
+			<p>Recover ACU</p>
+			<p>More Commanders!</p>
+			<h2>ACU's Cost: <span id="acucost">0</span></h2>
+			<input class="Button" type="button" value="Recover ACU" onclick="recoverACU()">
+		</div>
+		<div id="MEXUPG" class="section" style="display:none;"> 
+			<h1>Extractor Efficiency</h1>
+			<Img src="MEX face.png" alt="MEX">
+			<p>Upgrades extraction rate by 1</p>
+			<p>More Metal!</p>
+			<h2>Upgrade cost: <span id="upgCost">0</span></h2>
+			<input class="Button" type="button" value="Upgrade" onclick="UpgradeMEX()">
+		</div>
+	</div>
+	
+	<div id="EnemyForces" class="row">
+		<div class="titles"><h2>Enemy Forces</h2></div>
+		<div id="FOEDOXA" class="sectionB" style="display:none;">
+			<h1>Dox</h1>
+			<Img src="FOEDOX face.png" alt="ENENMY DOX">
+			<p>Enemy forces detected! 50 enemy Dox bots on our perimeter!</p>
+			<p>You should defeat these enemy forces!</p>
+			<h2>Dox: <span id="FoeDoxsA">0</span></h2>
+			<input class="Button" type="button" value="ATTACK!" onclick="attackWithUnits()">
+		</div>
+	</div>
+	
+	<div id="LocationsandPlanets" class="row">
+		<div class="titles"><h2>Locations and Planets V</h2></div>
+		<div id="STARTCON" class="sectionP">
+			<h1>Starting Continent</h1>
+			<Img src="continent-clipart-african-continent-md.png" alt="Starting Continent" style="width:250px">
+			<p>This is where you have awoken, and it is here where you will start your mission to conquer the galaxy in this great Galactic War!</p>
+			<p>Scout the continent for enemy forces and MEX spots.</p>
+			<p>Costs 5 radars to survey.</p>
+			<input class="Button" type="button" value="Scan?" onclick="scanA(15)">
+		</div>
+		<div id="GREATCON" class="sectionP" style="display:none">
+			<h1>Great Continent</h1>
+			<Img src="continent-clipart-african-continent-md.png" alt="Great Continent" style="width:250px">
+			<p>The continent on the other side of the planet awaits commander, we need only survey it's metal sites and be on the look out for enemy threats within.</p>
+			<p>Scout the continent for enemy forces and MEX spots.</p>
+			<p>Costs 15 radars to survey.</p>
+			<input class="Button" type="button" value="Scan?" onclick="scanB(20)">
+		</div>
+	</div>
+	
+	<div id="Other" class="row">
+		<div class="titles"><h2>Other</h2></div>
+	</div>
+	
+
+<script>
+var
+	metal = 0, 					// starting metal
+	energy = 0, 				// starting energy
+	acus = 1, 					// starting commanders
+	acucost = 3000, 			// starting commanders metal cost
+	mmines = 0, 				// starting metal extractors
+	mminespots = 20,			// starting metal spots
+	mminecost = 10, 			// starting extractor metal cost
+	minebuildtic = 0,			// minebuild counter for fabbers to build new metal extractors
+	pplants = 0, 				// starting power-plants
+	pplantcost = 10, 			// starting power-plant metal cost
+	ppbuildtic = 0,				// ppbuild counter for fabbers to build new power plants
+	radars = 0,					// starting radars
+	radarMcost = 50,			// starting radar metal cost
+	radarEcost = 1000			// starting radar energy cost
+	bFactorys = 0,				// starting bot factorys
+	bFactorycost = 300,			// starting bot factory metal cost
+	bFabbers = 0,				// starting bot fabbers
+	bDoxs = 0,					// starting dox
+	Bradio = "bFabber",			// check fabber
+	FoeDoxsA = 50,				// starting enemy dox
+	upgNo = 1,					// starting mex upgrade level
+	upgCost = 5000;				// staring mex upgrade cost
+	
+	
+function updateDisplay() {	//This let the game start with the right values as dictated above in the variables
+	document.getElementById("metal").innerHTML = metal.toLocaleString();
+	document.getElementById("energy").innerHTML = energy.toLocaleString();
+	document.getElementById("acus").innerHTML = acus;
+	document.getElementById("acucost").innerHTML = acucost;
+	document.getElementById('mmines').innerHTML = mmines;
+	document.getElementById('mminespots').innerHTML = mminespots;
+	document.getElementById('mminecost').innerHTML = mminecost;
+	document.getElementById('pplants').innerHTML = pplants;
+	document.getElementById('pplantcost').innerHTML = pplantcost;
+	document.getElementById('radars').innerHTML = radars;
+	document.getElementById('radarMcost').innerHTML = radarMcost;
+	document.getElementById('radarEcost').innerHTML = radarEcost;
+	document.getElementById('bFactorys').innerHTML = bFactorys;
+	document.getElementById('bFactorycost').innerHTML = bFactorycost;
+	document.getElementById('bFabbers').innerHTML = bFabbers;
+	document.getElementById('bDoxs').innerHTML = bDoxs;
+	document.getElementById('FoeDoxsA').innerHTML = FoeDoxsA;
+	document.getElementById('upgCost').innerHTML = upgCost;
+}
+window.onload = updateDisplay();
+
+// Attack button start!
+function attackWithUnits () {
+	if (bDoxs > 0 && FoeDoxsA > 0) {
+		FoeDoxsA -= bDoxs;
+		bDoxs -= FoeDoxsA;
+		if (bDoxs <= 0) {
+			bDoxs = 0;
+		}
+		document.getElementById('bDoxs').innerHTML = bDoxs;
+		document.getElementById('FoeDoxsA').innerHTML = FoeDoxsA;
+		if (FoeDoxsA <= 0) {
+			document.getElementById('FOEDOXA').style.display = "none"; // Hides enemy panel after use
+			document.getElementById('GREATCON').style.display = "block"; // Shows next location
+		}
+	}
+}
+// Attack button end!
+
+// Metal creation start!
+function reclaimM() {			// Commanders reclaim
+	metal = metal + acus;
+	document.getElementById("metal").innerHTML = metal.toLocaleString();
+
+}
+function metalMine(number) {	// Metal extractor mine
+	metal += (upgNo * number);
+	document.getElementById("metal").innerHTML = metal.toLocaleString();
+
+}
+// Metal creation end!
+
+// Energy creation start!
+function reclaimE() {			// Commander reclaim
+	energy = energy + (20 * acus);
+	document.getElementById("energy").innerHTML = energy.toLocaleString();
+
+}
+function energyMine(number) {	// Power plant generation
+	energy = energy + (20 * number);
+	document.getElementById("energy").innerHTML = energy.toLocaleString();
+
+}
+// Energy creation end!
+
+// Metal spot discovery start!
+function findSpots(number) {	// Finds metal spots
+		mminespots = mminespots + number;
+		document.getElementById("mminespots").innerHTML = mminespots;
+}
+// Metal spot discovery end!
+
+// Bot Factory production start!
+function checkBradio (String) { // this checks what the result of the Bot Factory radio is
+	switch (String){
+		case "bFabber":			// selected bot fabbers
+			Bradio = "bFabber";
+			break;
+		case "bDox":			// selected dox bots
+			Bradio = "bDox";
+			break;
+	}
+}
+function buildBots(number) { // this takes that ^ answer and chooses what unit to build
+
+	switch(Bradio){
+		case "bFabber":
+				bFabbers = bFabbers + number; 					// builds 1 bot fabber per bot factory
+				// energy -= 20 * number;
+				document.getElementById('bFabbers').innerHTML = bFabbers;
+				//document.getElementById("energy").innerHTML = energy.toLocaleString();
+			break;
+		case "bDox":
+				bDoxs = bDoxs + number;							// builds 1 dox per bot factory
+				// energy -= 5 * number;
+				document.getElementById('bDoxs').innerHTML = bDoxs;
+				//document.getElementById("energy").innerHTML = energy.toLocaleString();
+			break;
+	} 
+}
+// Bot Factory production end!
+
+// Fabbers build metal and power start!
+function fabberBuild(number){
+	if (mmines < mminespots){
+		if (minebuildtic >= 1){
+			minebuildtic = Math.floor(minebuildtic);
+			if (mmines + minebuildtic > mminespots) {
+			mmines = mminespots;}
+			else mmines += minebuildtic;
+			minebuildtic = 0;
+			document.getElementById('mmines').innerHTML = mmines;
+		} else {
+			minebuildtic = 0.1 * number;
+		}
+	} /*else {							Inquire about problems with this!!!!!!!!!!!!!!!
+		if (ppbuildtic >= 1){
+			ppbuildtic = Math.floor(ppbuildtic);
+			pplants += ppbuildtic;
+			ppbuildtic = 0;
+			document.getElementById('pplants').innerHTML = pplants;
+		} else {
+			ppbuildtic = 0.1 * number;
+		}*/
+}
+// Fabbers build metal and power end!
+
+// Building stuff start!
+function buildPP(){
+    var pplantcost = Math.floor(10 * Math.pow(1.1,pplants));     				//works out the cost of this power plant
+    if(metal >= pplantcost){                                   					//checks that the player can afford the powerplant
+        pplants += 1;                             								//increases number of powerplants
+    	metal = metal - pplantcost;                          					//removes the metal spent
+        document.getElementById('metal').innerHTML = metal.toLocaleString();  	//updates the number of metal for the user
+        document.getElementById('pplants').innerHTML = pplants;  				//updates the number of powerplants for the user
+		var nextCost = Math.floor(10 * Math.pow(1.1,pplants));       			//works out the cost of the next powerplant
+		document.getElementById('pplantcost').innerHTML = nextCost;  			//updates the powerplant cost for the user
+    };
+};
+
+function buildMEX(){
+    var mminecost = Math.floor(10 * Math.pow(1.1,mmines));     		//works out the cost of this MEX
+    if(metal >= mminecost && mmines < mminespots){                  //checks that the player can afford the MEX
+        mmines += 1;                             		//increases number of MEXs
+    	metal = metal - mminecost;                          		//removes the metal spent
+        document.getElementById('metal').innerHTML = metal.toLocaleString();  		//updates the number of metal for the user
+        document.getElementById('mmines').innerHTML = mmines;  		//updates the number of MEX for the user
+		var nextCost = Math.floor(10 * Math.pow(1.1,mmines));       	//works out the cost of the next MEX
+		document.getElementById('mminecost').innerHTML = nextCost;  	//updates the MEX cost for the user
+    };
+};
+
+function buildRadar(){
+    var radarMcost = Math.floor(50 * Math.pow(1.1,radars));			//works out the metal cost of this MEX
+	var radarEcost = Math.floor(1000 * Math.pow(1.1,radars));		//works out the energy cost of this radar
+    if(metal >= radarMcost && energy >= radarEcost){          						        //checks that the player can afford the MEX
+        radars += 1;                             		//increases number of MEXs
+    	metal = metal - radarMcost;									//removes the metal spent
+		energy = energy - radarEcost;								//removes the energy spent
+        document.getElementById('metal').innerHTML = metal.toLocaleString();  		//updates the number of metal for the user
+		document.getElementById('energy').innerHTML = energy.toLocaleString();  		//updates the number of metal for the user
+        document.getElementById('radars').innerHTML = radars;  		//updates the number of MEX for the user
+		var nextCostA = Math.floor(50 * Math.pow(1.1,radars));       	//works out the cost of the next MEX
+		var nextCostB = Math.floor(1000 * Math.pow(1.1,radars));       	//works out the cost of the next MEX
+		document.getElementById('radarMcost').innerHTML = nextCostA;  	//updates the MEX cost for the user
+		document.getElementById('radarEcost').innerHTML = nextCostB;  	//updates the MEX cost for the user
+    };
+};
+
+function buildbFactory(){
+    var bFactorycost = Math.floor(300 * Math.pow(1.5,bFactorys));     	//works out the cost of this bot factory
+    if(metal >= bFactorycost){                                   		//checks that the player can afford the bot factory
+        bFactorys += 1;                             	//increases number of bot factorys
+    	metal = metal - bFactorycost;                          			//removes the metal spent
+        document.getElementById('metal').innerHTML = metal.toLocaleString();  			//updates the number of metal for the user
+        document.getElementById('bFactorys').innerHTML = bFactorys;  	//updates the number of bot factorys for the user
+		var nextCost = Math.floor(300 * Math.pow(1.5,bFactorys));       	//works out the cost of the next bot factorys
+		document.getElementById('bFactorycost').innerHTML = nextCost;  		//updates the bot factorys cost for the user
+    };
+};
+
+// Building stuff end!
+// Upgrades start!
+function recoverACU(){
+    var acucost = Math.floor(1000 * Math.pow(3,acus));     		//works out the cost of this ACU
+    if(metal >= acucost){                                   		//checks that the player can afford the ACU
+        acus += 1;                             				//increases number of ACU's
+    	metal = metal - acucost;                          			//removes the metal spent
+        document.getElementById('metal').innerHTML = metal.toLocaleString();  		//updates the number of metal for the user
+        document.getElementById('acus').innerHTML = acus;  			//updates the number of ACU's for the user
+		var nextCost = Math.floor(1000 * Math.pow(3,acus));       //works out the cost of the next ACU
+		document.getElementById('acucost').innerHTML = nextCost;  	//updates the ACU cost for the user
+    };
+
+};
+function UpgradeMEX(){
+    var upgCost = Math.floor(5000 * Math.pow(1.5,upgNo));     		//works out the cost of this ACU
+    if(metal >= upgCost){                                   		//checks that the player can afford the ACU
+        upgNo += 1;                             				//increases number of ACU's
+    	metal = metal - upgCost;                          			//removes the metal spent
+        document.getElementById('metal').innerHTML = metal.toLocaleString();  		//updates the number of metal for the user
+		var nextCost = Math.floor(5000 * Math.pow(1.5,upgNo));       //works out the cost of the next ACU
+		document.getElementById('upgCost').innerHTML = upgCost;  	//updates the ACU cost for the user
+    };
+
+};
+// Upgrades end!
+
+//Unlocking stuff start!
+function unlocks (){
+	if (metal >= 10){
+		document.getElementById('MEX').style.display = "block";
+		document.getElementById('PP').style.display = "block";
+	}
+	if (mmines >= 15) {
+		document.getElementById('RADAR').style.display = "block";
+	}
+	if (mmines >= 25) {
+		document.getElementById('BOTF').style.display = "block";
+	}
+	if (bFactorys >= 1) {
+		document.getElementById('BFAB').style.display = "block";
+		document.getElementById('DOX').style.display = "block";
+	}
+	if (bFactorys >= 5) {
+		document.getElementById('RECOVERY').style.display = "block";
+		document.getElementById('MEXUPG').style.display = "block";
+	}
+}
+//Unlocking stuff end!
+
+//Exploring Planets start!
+function scanA(number) {
+	if (radars >= 5) {
+		findSpots(number);											// Discovers metal spots when planet scanned
+		document.getElementById('FOEDOXA').style.display = "block"; 	// Discovers enemy units when planet scanned
+		document.getElementById('STARTCON').style.display = "none"; // Hides planet after scan
+		radars -= 5
+		document.getElementById('radars').innerHTML = radars;
+	document.getElementById('radarMcost').innerHTML = radarMcost;
+	document.getElementById('radarEcost').innerHTML = radarEcost;
+	}
+}
+function scanB(number) {
+	if (radars >= 15) {
+		findSpots(number);											// Discovers metal spots when planet scanned
+// put enemy forces here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		document.getElementById('GREATCON').style.display = "none"; // Hides planet after scan
+		radars -= 15
+		document.getElementById('radars').innerHTML = radars;
+		document.getElementById('radarMcost').innerHTML = radarMcost;
+		document.getElementById('radarEcost').innerHTML = radarEcost;
+	}
+}
+//Exploring Planets end!
+
+window.setInterval(function(){ //Time looper
+energyMine(pplants);
+metalMine(mmines);
+buildBots(bFactorys);
+fabberBuild(bFabbers);
+unlocks ();
+}, 1000);
+</script>
 </body>
 </html>

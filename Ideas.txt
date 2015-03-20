@@ -1,0 +1,73 @@
+Enemys
+Chapter 1
+	The Wraiths(Revenants)
+	The Byzantine Legion(Legionis Machina)
+	The Purple Host(Foundation)
+	The Rebels (Synchronous rebels)
+	
+Chapter 2
+	The Illuminated (Aeon)
+	The United Electronic Faction (UEF)
+	The Cybernetic State (Cybran)
+
+Chapter 3
+	The Hegemony (Xziphid Hegemony)
+	The Precursors (The Progenitors)
+
+Chapter 4
+	The ARMED Resistance (The ARM)
+	The KOR Empire (The Core)
+	The KOR Kontingancy (End game Core enemy)
+	
+	
+
+Enemy troops
+	PA units
+	SupCom units
+	Made up Units from PA's Past
+	TA units
+	Mental units made from all
+
+Locations
+	Starting continent (Continent)
+	The Great continent (Larger continent)
+	The Southern Pole (South pole continent)
+	The Grey rock (The moon)
+	The Red Menace (Mars)
+	The Giant (Gas giant)
+	The Rocky Road (Asteroid belt)
+	The Cold One (Small ice world)
+	
+	The Triplets (Triple star system)
+	The Gate Way (Metal world)
+	The graveyard (Wraith home system)
+	The battleground (Wrath final stand)
+	
+	The Gates of Rome (Byzantine Opener)
+	Antium beckons (
+	Naples next (
+	Athens with style (
+	Macedon blood (
+	Istanbul (
+	Dome of the Rock (Byzantine final stand)
+	
+	Ambush (Purple Opener)
+	The Holy land (
+	The Inquisition (
+	A Great slog (
+	Heretics (
+	Sacrilege (
+	War Crimes (
+	Unexpected Guests(Wraith Byzantine and Purle tag team, purple final stand)
+	
+	
+
+
+Upgrades
+	Resource Upgrades
+	Unit Upgrades
+	Building Upgrades
+	Commander Upgrades
+	Unit Unlocks
+
+	Killing enemy forces unlocks upgrades for new stuff.
