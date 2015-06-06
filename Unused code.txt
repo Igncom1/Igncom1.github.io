@@ -1,0 +1,183 @@
+		<div id="GREN" class="section"style="display:none;" >
+			<h1>Grenadier</h1>
+			<Img src="Bot Factory face.png" alt="Bot Factory" style="width:250px;height:106px;">
+			<p>These boys will be flinging shells in no time! but hitting stuff is another matter altogether.</p>
+			<p>Fights enemy buildings.</p>
+			<h2>Grenadiers: <span id="bGrenadiers">0</span></h2>
+		</div>
+	
+		<div id="BOOM" class="section" style="display:none;">
+			<h1>Boom</h1>
+			<Img src="Bot Factory face.png" alt="Bot Factory" style="width:250px;height:106px;">
+			<p>These little guys just love to hug people, with their little loving spider hands, and explosive abdomen.</p>
+			<p>Fights enemy units.</p>
+			<h2>Booms: <span id="bBooms">0</span></h2>
+		</div>
+	
+		<div id="COMFAB" class="section" style="display:none;">
+			<h1>Combat Fabbers</h1>
+			<Img src="Bot Factory face.png" alt="Bot Factory" style="width:250px;height:106px;">
+			<p>Like fabbers, but for combat! Get it?....don't blame me, I didn't name it!</p>
+			<p>Heals stuff for you?</p>
+			<h2>Combat Fabbers: <span id="bCombatFabbers">0</span></h2>
+		</div>
+		
+		//Attack button start!
+function attackWithUnits (String) {					// Make better and reusable combat system!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	switch (String) {						// decides what battle is happening
+		case	"FOEDOXA":
+			var tDoxDMG = bDoxDMG * bDoxs;	// total dox damage
+			var tDoxHP = bDoxHP * bDoxs;	// total dox hp
+			var tfDoxDMG = bDoxDMG * FoeDoxsA;	// total foe dox damage
+			var tfDoxHP = bDoxHP * FoeDoxsA;	// total foe dox hp.
+			tDoxHP -= tfDoxDMG;					// remaining friendly hp from enemy damage
+			tfDoxHP -= tDoxDMG;					// remaining foe hp from friendly damage
+			if (tDoxHP >= 2) {					// is friendly dox hp above the minium for the unit
+				tDoxHP /= 2;					// dox hp is halfed
+				tDoxHP = Math.ceil(tDoxHP);		// dox hp is rounded up
+				bDoxs = tDoxHP;					// remaining doxes calcualted from remaining hp
+				document.getElementById('bDoxs').innerHTML = bDoxs; // dox numbers updated
+			} else {						// friendly dox hp is less then the minium for the unit
+				bDoxs -= bDoxs;				// remove all doxs
+				document.getElementById('bDoxs').innerHTML = bDoxs;	// dox numbers updated
+			}
+			if (tfDoxHP >= 2) {
+				tfDoxHP /= 2;
+				tfDoxHP = Math.ceil(tfDoxHP);
+				FoeDoxsA = tfDoxHP;
+				document.getElementById('FoeDoxsA').innerHTML = FoeDoxsA;
+			} else {
+				FoeDoxsA -= FoeDoxsA;
+				document.getElementById('FoeDoxsA').innerHTML = FoeDoxsA;
+				document.getElementById('FOEDOXA').style.display = "none";
+			}
+			break;
+	}
+}
+// Attack button end!
+
+// Fabbers build metal and power start!
+function fabberBuild(number){
+	if (mmines < mminespots){
+		if (minebuildtic >= 1){
+			minebuildtic = Math.floor(minebuildtic);
+			if (mmines + minebuildtic > mminespots) {
+			mmines = mminespots;}
+			else mmines += minebuildtic;
+			minebuildtic = 0;
+			document.getElementById('mmines').innerHTML = mmines;
+			var nextCost = Math.floor(10 * Math.pow(1.1,mmines));       	//works out the cost of the next MEX
+			document.getElementById('mminecost').innerHTML = nextCost.toLocaleString();  	//updates the MEX cost for the user
+		} else {
+			minebuildtic = 0.1 * number;
+		}
+	} /*else {							Inquire about problems with this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		if (ppbuildtic >= 1){
+			ppbuildtic = Math.floor(ppbuildtic);
+			pplants += ppbuildtic;
+			ppbuildtic = 0;
+			document.getElementById('pplants').innerHTML = pplants;
+			var nextCost = Math.floor(10 * Math.pow(1.1,pplants));       			//works out the cost of the next powerplant
+			document.getElementById('pplantcost').innerHTML = nextCost;  			//updates the powerplant cost for the user
+		} else {
+			ppbuildtic = 0.1 * number;
+		}*/
+}
+// Fabbers build metal and power end!
+
+	<div id="EnemyForces" class="row">
+		<div class="titles"><h2>Enemy Forces</h2></div>
+		<div id="FOEDOXA" class="sectionB" style="display:none;">
+			<h1>Dox</h1>
+			<Img src="FOEDOX face.png" alt="ENENMY DOX">
+			<p>Wraith forces detected! 50 enemy Dox bots on our perimeter, you should build a Bot Factory and begin Dox production to counter this threat.</p>
+			<p>You should defeat these enemy forces!</p>
+			<h2>Dox: <span id="FoeDoxsA">0</span></h2>
+			<input class="Button" type="button" value="ATTACK!" onclick="attackWithUnits('FOEDOXA')">
+		</div>
+		<div id="FOETURA" class="sectionB" style="display:none;">
+			<h1>Turrets</h1>
+			<Img src="FOEDOX face.png" alt="ENENMY DOX">
+			<p>Wraith forces detected! 10 enemy turrets scattered around a landing location, these will be tough opponents without some siege weapons.</p>
+			<p>You should defeat these enemy forces!</p>
+			<h2>Turrets: <span id="FoeTursA">0</span></h2>
+			<input class="Button" type="button" value="ATTACK!" onclick="attackWithUnits('FOETURA')">
+		</div>
+		<div id="FOEANTA" class="sectionB" style="display:none;">
+			<h1>Ants</h1>
+			<Img src="FOEDOX face.png" alt="ENENMY DOX">
+			<p>Wraith forces detected! 25 enemy Ant tanks located around the enemy LZ, these enemy forces will be stronger then your dox, but should go down to overwhelming force.</p>
+			<p>You should defeat these enemy forces!</p>
+			<h2>Ants: <span id="FoeAntsA">0</span></h2>
+			<input class="Button" type="button" value="ATTACK!" onclick="attackWithUnits('FOEANTA')">
+		</div>
+		
+		<div id="FOEBASEA" class="sectionB" style="display:none;">
+			<h1>Outpost Base</h1>
+			<Img src="FOEDOX face.png" alt="ENENMY DOX">
+			<p>Wraith forces detected!</p>
+			<p>You should defeat these enemy forces!</p>
+			<h2>Various Structures: <span id="FoeBasesA">0</span></h2>
+			<input class="Button" type="button" value="ATTACK!" onclick="attackWithUnits('FOEBASEA')">
+		</div>
+		<div id="FOEDOXB" class="sectionB" style="display:none;">
+			<h1>Dox</h1>
+			<Img src="FOEDOX face.png" alt="ENENMY DOX">
+			<p>Wraith forces detected!</p>
+			<p>You should defeat these enemy forces!</p>
+			<h2>Dox: <span id="FoeDoxsB">0</span></h2>
+			<input class="Button" type="button" value="ATTACK!" onclick="attackWithUnits('FOEDOXB')">
+		</div>
+		<div id="FOEANTB" class="sectionB" style="display:none;">
+			<h1>Ants</h1>
+			<Img src="FOEDOX face.png" alt="ENENMY DOX">
+			<p>Wraith forces detected!</p>
+			<p>You should defeat these enemy forces!</p>
+			<h2>Ants: <span id="FoeAntsB">0</span></h2>
+			<input class="Button" type="button" value="ATTACK!" onclick="attackWithUnits('FOEANTB')">
+		</div>
+		<div id="FOETURB" class="sectionB" style="display:none;">
+			<h1>Turrets</h1>
+			<Img src="FOEDOX face.png" alt="ENENMY DOX">
+			<p>Wraith forces detected!</p>
+			<p>You should defeat these enemy forces!</p>
+			<h2>Turrets: <span id="FoeTursB">0</span></h2>
+			<input class="Button" type="button" value="ATTACK!" onclick="attackWithUnits('FOETURB')">
+		</div>
+		<div id="FOEINFA" class="sectionB" style="display:none;">
+			<h1>Infernos</h1>
+			<Img src="FOEDOX face.png" alt="ENENMY DOX">
+			<p>Wraith forces detected!</p>
+			<p>You should defeat these enemy forces!</p>
+			<h2>Infernos: <span id="FoeInfsA">0</span></h2>
+			<input class="Button" type="button" value="ATTACK!" onclick="attackWithUnits('FOEINFA')">
+		</div>
+	</div>
+	
+	//bDoxHP = 2,					// dox unit hp
+	//bDoxDMG = 1,				// dox unit damage
+	//FoeDoxsA = 50,				// starting enemy dox
+	//FoeDoxsB = 300,
+	//FoeAntsA = 25,
+	//FoeAntsB = 100,
+	//FoeTursA = 10,
+	//FoeTursB = 30,
+	//FoeBasesA = 40,
+	//FoeInfsA = 10;
+	//document.getElementById('FoeDoxsA').innerHTML = FoeDoxsA;
+	//document.getElementById('FoeDoxsB').innerHTML = FoeDoxsB;
+	//document.getElementById('FoeAntsA').innerHTML = FoeAntsA;
+	//document.getElementById('FoeAntsB').innerHTML = FoeAntsB;
+	//document.getElementById('FoeTursA').innerHTML = FoeTursA;
+	//document.getElementById('FoeTursB').innerHTML = FoeTursB;
+	//document.getElementById('FoeBasesA').innerHTML = FoeBasesA;
+	//document.getElementById('FoeInfsA').innerHTML = FoeInfsA;
+	//document.getElementById('FOEDOXA').style.display = "block"; 	// Discovers enemy units when planet scanned
+	//document.getElementById('FOEANTA').style.display = "block"; 	// Discovers enemy units when planet scanned
+	//document.getElementById('FOETURA').style.display = "block"; 	// Discovers enemy units when planet scanned
+	//document.getElementById('FOEDOXB').style.display = "block"; 	// Discovers enemy units when planet scanned
+	//document.getElementById('FOEBASEA').style.display = "block"; 	// Discovers enemy units when planet scanned
+	//document.getElementById('FOETURB').style.display = "block"; 	// Discovers enemy units when planet scanned
+	//document.getElementById('FOEANTB').style.display = "block"; 	// Discovers enemy units when planet scanned
+	//document.getElementById('FOEINFA').style.display = "block"; 	// Discovers enemy units when planet scanned
+	//fabberBuild(bFabbers); //Figure out better balance for fabbers (Possibly have them build mex's for the actual cost of the mex rather then for free???????????
