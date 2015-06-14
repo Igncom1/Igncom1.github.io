@@ -66,8 +66,15 @@ Locations
 Upgrades
 	Resource Upgrades
 	Unit Upgrades
+	- more functions
 	Building Upgrades
+	- more functions
 	Commander Upgrades
+	- More lathe upgrades
+	- fighting ability
+	- automated construction
 	Unit Unlocks
+	- orbital units
+	- automated base builders
 
-	Killing enemy forces unlocks upgrades for new stuff.
+Show the player conqured locations

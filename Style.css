@@ -44,25 +44,6 @@
     clear: both;
 }
 
-.sectionB {
-    width:250px;
-    float:left;
-	border:5px solid Red;
-	border-radius: 25px;
-	margin: 2px;
-	padding: 5px;
-}
-
-.sectionB:before,
-.sectionB:after {
-    content: '';
-    display: table;
-}
-
-.sectionB:after {
-    clear: both;
-}
-
 .sectionP {
     width:250px;
     float:left;

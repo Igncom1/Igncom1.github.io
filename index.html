@@ -23,7 +23,7 @@
 			<h1>Armored Command Unit</h1>
 			<Img src="Gamma Sync Commander.png" alt="ACU" style="">
 			<p>The ACU is the head of your army, unless you have 40, then you are a hydra....hail hydra!</p>
-			<p>Reclaims <span id="mReclaim">0</span> metal or <span id="eReclaim">0</span> energy per click.</p>
+			<h3>Reclaims <span id="mReclaim">0</span> metal or <span id="eReclaim">0</span> energy per click.</h3>
 			<h2>ACU's: <span id="acus">0</span></h2>
 		</div>
 	
@@ -31,7 +31,7 @@
 			<h1>Bot Fabber</h1>
 			<Img src="Bot Fabber face.png" alt="Bot Factory" style="">
 			<p>Bot fabbers are like people, but expendable......ok MORE expendable.</p>
-			<p>Reclaims Energy and Metal for you.</p>
+			<h3>Reclaims 0.1 Energy and Metal for you.</h3>
 			<h2>Bot Fabbers: <span id="bFabbers">0</span></h2>
 		</div>
 	
@@ -39,7 +39,7 @@
 			<h1>Dox</h1>
 			<Img src="Dox face.png" alt="Bot Factory">
 			<p>Your basic combat units, utterly worthless, but cheap, and can swim....for whatever reason.</p>
-			<p>Fights enemy units.</p>
+			<h3>Fights enemy units.</h3>
 			<h2>Dox: <span id="bDoxs">0</span></h2>
 		</div>
 	</div>
@@ -50,7 +50,7 @@
 			<h1>Metal Extractor</h1>
 			<Img src="MEX face.png" alt="Metal Extractor" style="">
 			<p>The Metal Extractor generates 1 metal per second, saving you from a life of reclamation.</p>
-			<p>Mines 1 metal per second.</p>
+			<h3>Mines 1 metal per second.</h3>
 			<h2>Metal Extractors <span id="mmines">0</span> out of <span id="mminespots">0</span> mine spots</h2>
 			<h2>Metal Extractor cost: <span id="mminecost">0</span></h2>
 			<input class="Button" type="button" value="Build Metal Extractor" onclick="buildMEX()">
@@ -60,7 +60,7 @@
 			<h1>Power Plant</h1>
 			<Img src="Power Plant face.png" alt="Power Plant" style="">
 			<p>By stuffing all kinds of things into this building, it generates power.... somehow.</p>
-			<p>Generates 20 power per second.</p>
+			<h3>Generates 20 power per second.</h3>
 			<h2>PowerPlants: <span id="pplants">0</span></h2>
 			<h2>PowerPlant Cost: <span id="pplantcost">0</span></h2>
 			<input class="Button" type="button" value="Build Power Plant" onclick="buildPP()">
@@ -70,7 +70,7 @@
 			<h1>Radar</h1>
 			<Img src="Radar face.png" alt="Radar" style="">
 			<p>The classic world war 2 device for dodging incoming Deutsch Wurst!</p>
-			<p>Used to survey planets and other locations</p>
+			<h3>Used to survey planets and other locations</h3>
 			<h2>Radars: <span id="radars">0</span></h2>
 			<h2>Radar Cost: <span id="radarMcost">0</span> and  <span id="radarEcost">0</span></h2>
 			<input class="Button" type="button" value="Build Radar" onclick="buildRadar()">
@@ -80,7 +80,7 @@
 			<h1>Bot Factory</h1>
 			<Img src="Bot Factory face.png" alt="Bot Factory" style="width:250px;height:106px;">
 			<p>Builds robots of many types, like cannon fodder bot, or...other fodder bot....oh...it's the starting factory.</p>
-			<p>Builds Bot Fabbers, Dox, Grenadiers, Booms and Combat Fabbers.</p>
+			<h3>Builds Bot Fabbers and Dox.</h3>
 			<h2>Bot Factory: <span id="bFactorys">0</span></h2>
 			<h2>Bot Factory Cost: <span id="bFactorycost">0</span></h2>
 			<input class="Button" type="button" value="Build Bot Factory" onclick="buildbFactory(1)"><br />
@@ -170,7 +170,7 @@
 		</div>
 		<div id="SOUTHCON" class="sectionP" style="display:none">
 			<h1>South Pole</h1>
-			<Img src="" alt="Name of Picture">
+			<Img src="SPole.png" alt="Name of Picture" style="width:250px";>
 			<p>The last hiding spot of any possible hostile forces on the planet, once surveyed we will have all we need from this world and can start looking beyond...</p>
 			<p>Scout the continent for Technology and MEX spots.</p>
 			<p>Costs 15 radars to survey.</p>
@@ -181,7 +181,7 @@
 			<Img src="" alt="Name of Picture">
 			<p>Lore of why we are here.</p>
 			<p>Scout the continent for Technology and MEX spots.</p>
-			<p>Costs 15 radars to survey.</p>
+			<p>Costs 250 radars to survey.</p>
 			<input class="Button" type="button" value="Scan?" onclick="scanD(40)">
 		</div>
 		<div id="MARS" class="sectionP" style="display:none">
@@ -189,7 +189,7 @@
 			<Img src="" alt="Name of Picture">
 			<p>Lore of why we are here.</p>
 			<p>Scout the continent for Technology and MEX spots.</p>
-			<p>Costs 15 radars to survey.</p>
+			<p>Costs 400 radars to survey.</p>
 			<input class="Button" type="button" value="Scan?" onclick="scanE(120)">
 		</div>
 		<div id="GAS" class="sectionP" style="display:none">
@@ -197,7 +197,7 @@
 			<Img src="" alt="Name of Picture">
 			<p>Lore of why we are here.</p>
 			<p>Scout the continent for Technology and MEX spots.</p>
-			<p>Costs 15 radars to survey.</p>
+			<p>Costs 1600 radars to survey.</p>
 			<input class="Button" type="button" value="Scan?" onclick="scanF(0)">
 		</div>
 		<div id="ROID" class="sectionP" style="display:none">
@@ -205,7 +205,7 @@
 			<Img src="" alt="Name of Picture">
 			<p>Lore of why we are here.</p>
 			<p>Scout the continent for Technology and MEX spots.</p>
-			<p>Costs 15 radars to survey.</p>
+			<p>Costs 40 radars to survey.</p>
 			<input class="Button" type="button" value="Scan?" onclick="scanG(60)">
 		</div>
 		<div id="ICE" class="sectionP" style="display:none">
@@ -213,9 +213,53 @@
 			<Img src="" alt="Name of Picture">
 			<p>Lore of why we are here.</p>
 			<p>Scout the continent for Technology and MEX spots.</p>
-			<p>Costs 15 radars to survey.</p>
+			<p>Costs 600 radars to survey.</p>
 			<input class="Button" type="button" value="Scan?" onclick="scanH(10)">
 		</div>
+	</div>
+	<div id="ControlledTerritory" class="row">
+		<div class="titles"><h2>Controlled Territory</h2></div>
+		<div id="STARTCONCT" class="section" style="display:none">
+			<h1>Starting Continent</h1>
+			<Img src="SCon.png" alt="Starting Continent">
+			<p>This is where you have awoken, and it is here where you will start your mission to conquer the galaxy in this great Galactic War!</p>
+		</div>
+		<div id="GREATCONCT" class="section" style="display:none">
+			<h1>Great Continent</h1>
+			<Img src="GCon.png" alt="Great Continent">
+			<p>The continent on the other side of the planet awaits commander, we need only survey it's metal sites and be on the look out for enemy threats within.</p>
+		</div>
+		<div id="SOUTHCONCT" class="section" style="display:none">
+			<h1>South Pole</h1>
+			<Img src="SPole.png" alt="Name of Picture" style="width:250px";>
+			<p>The last hiding spot of any possible hostile forces on the planet, once surveyed we will have all we need from this world and can start looking beyond...</p>
+		</div>
+		<div id="MOONCT" class="section" style="display:none">
+			<h1>Grey Rock</h1>
+			<Img src="" alt="Name of Picture">
+			<p>Lore of why we are here.</p>
+		</div>
+		<div id="MARSCT" class="section" style="display:none">
+			<h1>The Red Menace</h1>
+			<Img src="" alt="Name of Picture">
+			<p>Lore of why we are here.</p>
+		</div>
+		<div id="GASCT" class="section" style="display:none">
+			<h1>The Giant</h1>
+			<Img src="" alt="Name of Picture">
+			<p>Lore of why we are here.</p>
+		</div>
+		<div id="ROIDCT" class="section" style="display:none">
+			<h1>Rocky Road</h1>
+			<Img src="" alt="Name of Picture">
+			<p>Lore of why we are here.</p>
+		</div>
+		<div id="ICECT" class="section" style="display:none">
+			<h1>The Cold One</h1>
+			<Img src="" alt="Name of Picture">
+			<p>Lore of why we are here.</p>
+		</div>
+	
 	</div>
 	
 	<div id="Other" class="row">
@@ -360,7 +404,7 @@ function buildPP(){
     	metal = metal - pplantcost;                          					//removes the metal spent
         document.getElementById('metal').innerHTML = metal.toLocaleString();  	//updates the number of metal for the user
         document.getElementById('pplants').innerHTML = pplants;  				//updates the number of powerplants for the user
-		var nextCost = Math.floor(10 * Math.pow(1.01,pplants));       			//works out the cost of the next powerplant
+		var nextCost = Math.floor(10 * Math.pow(1.1,pplants));       			//works out the cost of the next powerplant
 		pplantcost = nextCost;
 		document.getElementById('pplantcost').innerHTML = nextCost.toLocaleString();  			//updates the powerplant cost for the user
     };
@@ -372,7 +416,7 @@ function buildMEX(){
     	metal = metal - mminecost;                          					//removes the metal spent
         document.getElementById('metal').innerHTML = metal.toLocaleString();  	//updates the number of metal for the user
         document.getElementById('mmines').innerHTML = mmines;  					//updates the number of MEX for the user
-		var nextCost = Math.floor(10 * Math.pow(1.01,mmines));       			//works out the cost of the next MEX
+		var nextCost = Math.floor(10 * Math.pow(1.1,mmines));       			//works out the cost of the next MEX
 		mminecost = nextCost;
 		document.getElementById('mminecost').innerHTML = nextCost.toLocaleString();  			//updates the MEX cost for the user
     };
@@ -386,8 +430,8 @@ function buildRadar(){
         document.getElementById('metal').innerHTML = metal.toLocaleString();  	//updates the number of metal for the user
 		document.getElementById('energy').innerHTML = energy.toLocaleString();  //updates the number of metal for the user
         document.getElementById('radars').innerHTML = radars;  					//updates the number of MEX for the user
-		var nextCostA = Math.floor(50 * Math.pow(1.05,radars));       			//works out the cost of the next MEX
-		var nextCostB = Math.floor(1000 * Math.pow(1.05,radars));       			//works out the cost of the next MEX
+		var nextCostA = Math.floor(50 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		var nextCostB = Math.floor(1000 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
 		radarMcost = nextCostA;
 		radarEcost = nextCostB;
 		document.getElementById('radarMcost').innerHTML = nextCostA.toLocaleString();  			//updates the MEX cost for the user
@@ -441,7 +485,7 @@ function UpgradeMEX(){
         upgNo += 1;                             								//increases number of upgrade
     	metal = metal - upgMEXCost;                          						//removes the metal spent
         document.getElementById('metal').innerHTML = metal.toLocaleString();  	//updates the number of metal for the user
-		var nextCost = Math.floor(5000 * Math.pow(1.1,upgNo));       			//works out the cost of the next upgrade
+		var nextCost = Math.floor(5000 * Math.pow(1.5,upgNo));       			//works out the cost of the next upgrade
 		upgMEXCost = nextCost;
 		document.getElementById('upgMEXCost').innerHTML = upgMEXCost.toLocaleString();  				//updates the upgrade cost for the user
     };
@@ -495,10 +539,15 @@ function scanA(number) {
 		findSpots(number);												// Discovers metal spots when planet scanned
 		document.getElementById('BTECH').style.display = "block";		// Discovers bot tech
 		document.getElementById('STARTCON').style.display = "none"; 	// Hides planet after scan, consider better effects of scanning!!!!!!!!!!!!!!!!!!
+		document.getElementById('STARTCONCT').style.display = "block";
 		radars -= 5
 		document.getElementById('radars').innerHTML = radars;
-		document.getElementById('radarMcost').innerHTML = radarMcost.toLocaleString();
-		document.getElementById('radarEcost').innerHTML = radarEcost.toLocaleString();
+		var nextCostA = Math.floor(50 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		var nextCostB = Math.floor(1000 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		radarMcost = nextCostA;
+		radarEcost = nextCostB;
+		document.getElementById('radarMcost').innerHTML = nextCostA.toLocaleString();  			//updates the MEX cost for the user
+		document.getElementById('radarEcost').innerHTML = nextCostB.toLocaleString();  			//updates the MEX cost for the user
 		
 		document.getElementById('GREATCON').style.display = "block"; // Shows next location
 	}
@@ -508,10 +557,15 @@ function scanB(number) {
 		findSpots(number);											// Discovers metal spots when planet scanned
 		document.getElementById('ADVTECH').style.display = "block";
 		document.getElementById('GREATCON').style.display = "none"; // Hides planet after scan
+		document.getElementById('GREATCONCT').style.display = "block";
 		radars -= 15
 		document.getElementById('radars').innerHTML = radars;
-		document.getElementById('radarMcost').innerHTML = radarMcost.toLocaleString();
-		document.getElementById('radarEcost').innerHTML = radarEcost.toLocaleString();
+		var nextCostA = Math.floor(50 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		var nextCostB = Math.floor(1000 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		radarMcost = nextCostA;
+		radarEcost = nextCostB;
+		document.getElementById('radarMcost').innerHTML = nextCostA.toLocaleString();  			//updates the MEX cost for the user
+		document.getElementById('radarEcost').innerHTML = nextCostB.toLocaleString();  			//updates the MEX cost for the user
 		
 		document.getElementById('SOUTHCON').style.display = "block"; // Shows next location
 	}
@@ -520,6 +574,7 @@ function scanC(number) {
 	if (radars >= 15) {
 		findSpots(number);											// Discovers metal spots when planet scanned
 		document.getElementById('SOUTHCON').style.display = "none"; // Hides planet after scan
+		document.getElementById('SOUTHCONCT').style.display = "block";
 		radars -= 15
 		document.getElementById('radars').innerHTML = radars;
 		document.getElementById('radarMcost').innerHTML = radarMcost.toLocaleString();
@@ -529,61 +584,86 @@ function scanC(number) {
 	}
 }
 function scanD(number) {
-	if (radars >= 15) {
+	if (radars >= 250) {
 		findSpots(number);											// Discovers metal spots when planet scanned
 		document.getElementById('MOON').style.display = "none"; // Hides planet after scan
-		radars -= 15
+		document.getElementById('MOONCT').style.display = "block";
+		radars -= 250
 		document.getElementById('radars').innerHTML = radars;
-		document.getElementById('radarMcost').innerHTML = radarMcost.toLocaleString();
-		document.getElementById('radarEcost').innerHTML = radarEcost.toLocaleString();
+		var nextCostA = Math.floor(50 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		var nextCostB = Math.floor(1000 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		radarMcost = nextCostA;
+		radarEcost = nextCostB;
+		document.getElementById('radarMcost').innerHTML = nextCostA.toLocaleString();  			//updates the MEX cost for the user
+		document.getElementById('radarEcost').innerHTML = nextCostB.toLocaleString();  			//updates the MEX cost for the user
 		
 		document.getElementById('MARS').style.display = "block"; // Shows next location
 	}
 }
 function scanE(number) {
-	if (radars >= 15) {
+	if (radars >= 400) {
 		findSpots(number);											// Discovers metal spots when planet scanned
 		document.getElementById('MARS').style.display = "none"; // Hides planet after scan
-		radars -= 15
+		document.getElementById('MARSCT').style.display = "block";
+		radars -= 400
 		document.getElementById('radars').innerHTML = radars;
-		document.getElementById('radarMcost').innerHTML = radarMcost.toLocaleString();
-		document.getElementById('radarEcost').innerHTML = radarEcost.toLocaleString();
+		var nextCostA = Math.floor(50 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		var nextCostB = Math.floor(1000 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		radarMcost = nextCostA;
+		radarEcost = nextCostB;
+		document.getElementById('radarMcost').innerHTML = nextCostA.toLocaleString();  			//updates the MEX cost for the user
+		document.getElementById('radarEcost').innerHTML = nextCostB.toLocaleString();  			//updates the MEX cost for the user
 		
 		document.getElementById('GAS').style.display = "block"; // Shows next location
 	}
 }
 function scanF(number) {
-	if (radars >= 15) {
+	if (radars >= 1600) {
 		findSpots(number);											// Discovers metal spots when planet scanned
 		document.getElementById('GAS').style.display = "none"; // Hides planet after scan
-		radars -= 15
+		document.getElementById('GASCT').style.display = "block";
+		radars -= 1600
 		document.getElementById('radars').innerHTML = radars;
-		document.getElementById('radarMcost').innerHTML = radarMcost.toLocaleString();
-		document.getElementById('radarEcost').innerHTML = radarEcost.toLocaleString();
+		var nextCostA = Math.floor(50 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		var nextCostB = Math.floor(1000 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		radarMcost = nextCostA;
+		radarEcost = nextCostB;
+		document.getElementById('radarMcost').innerHTML = nextCostA.toLocaleString();  			//updates the MEX cost for the user
+		document.getElementById('radarEcost').innerHTML = nextCostB.toLocaleString();  			//updates the MEX cost for the user
 		
 		document.getElementById('ROID').style.display = "block"; // Shows next location
 	}
 }
 function scanG(number) {
-	if (radars >= 15) {
+	if (radars >= 40) {
 		findSpots(number);											// Discovers metal spots when planet scanned
 		document.getElementById('ROID').style.display = "none"; // Hides planet after scan
-		radars -= 15
+		document.getElementById('ROIDCT').style.display = "block";
+		radars -= 40
 		document.getElementById('radars').innerHTML = radars;
-		document.getElementById('radarMcost').innerHTML = radarMcost.toLocaleString();
-		document.getElementById('radarEcost').innerHTML = radarEcost.toLocaleString();
+		var nextCostA = Math.floor(50 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		var nextCostB = Math.floor(1000 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		radarMcost = nextCostA;
+		radarEcost = nextCostB;
+		document.getElementById('radarMcost').innerHTML = nextCostA.toLocaleString();  			//updates the MEX cost for the user
+		document.getElementById('radarEcost').innerHTML = nextCostB.toLocaleString();  			//updates the MEX cost for the user
 		
 		document.getElementById('ICE').style.display = "block"; // Shows next location
 	}
 }
 function scanH(number) {
-	if (radars >= 15) {
+	if (radars >= 600) {
 		findSpots(number);											// Discovers metal spots when planet scanned
 		document.getElementById('ICE').style.display = "none"; // Hides planet after scan
-		radars -= 15
+		document.getElementById('ICECT').style.display = "block";
+		radars -= 600
 		document.getElementById('radars').innerHTML = radars;
-		document.getElementById('radarMcost').innerHTML = radarMcost.toLocaleString();
-		document.getElementById('radarEcost').innerHTML = radarEcost.toLocaleString();
+		var nextCostA = Math.floor(50 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		var nextCostB = Math.floor(1000 * Math.pow(1.1,radars));       			//works out the cost of the next MEX
+		radarMcost = nextCostA;
+		radarEcost = nextCostB;
+		document.getElementById('radarMcost').innerHTML = nextCostA.toLocaleString();  			//updates the MEX cost for the user
+		document.getElementById('radarEcost').innerHTML = nextCostB.toLocaleString();  			//updates the MEX cost for the user
 		
 		// Shows next location
 	}
@@ -595,7 +675,7 @@ window.setInterval(function(){ //Time looper
 	energyBReclaim(bFabbers);
 	metalMine(mmines);
 	buildBots(bFactorys);
-}, 1000);
+}, 750);
 </script>
 </body>
 </html>
